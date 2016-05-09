@@ -5,17 +5,6 @@ import acm.graphics.GRectangle;
  * Created by dduren on 3/3/2016.
  */
 
-// OOP: Subclass
-    /*
-    * World objects are anything that will be affected by gravity in the game.
-    * To allow for easier expansion in the future, we made the Tank class
-    * a WorldObject by extending the WorldObject class. This will allow us to
-    * later include this in a list of objects to check for interactions with.
-    * */
-    //OOP: Polymorphism: Inheritance
-    /*
-    Tank inherits from world object and changes it
-     */
 public class Tank extends WorldObject {
     GImage tankImage =  new GImage("images\\bluetank.png");
     Turret turret;
@@ -30,10 +19,6 @@ public class Tank extends WorldObject {
         object = tankImage;
         turretOriginX = this.getX()+tankImage.getWidth()/2;
         turretOriginY = this.getY()+tankImage.getHeight()/2;
-        //OOP: Overloaded Constructor
-        /*
-        turret we call here overloads the constructor because we change it in this class as we change the angle
-         */
         turret = new Turret(turretOriginX, turretOriginY, turretLength, turretHeight);
 
         this.addToCanvas(Game.canvas);
@@ -67,10 +52,6 @@ public class Tank extends WorldObject {
             x = turretDimensions.getX();
             y = turretDimensions.getY();
         }
-        //OOP: Single Array
-        /*
-        coordinates is a single array because are just doubles that hold the angles of the turrets.
-         */
         coordinates[0] =  x;
         coordinates[1] = y;
         return coordinates;

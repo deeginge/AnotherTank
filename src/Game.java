@@ -15,23 +15,12 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-/*
-OOP: Class
-Game is a class
- */
 public class Game extends GraphicsProgram{
-    //OOP: Object
-    /*
-    p1 is an object because its instance of a class
 
-     */
     private Player p1;
     private Player p2;
     private Player currentPlayer; //this is the object the move, angle, and fire buttons will call when clicked.
-    //OOP: State
-    /*
-    *World Height and width are states because they describe the games applet size
-     */
+
     private final int WORLD_WIDTH = 1500;
     private final int WORLD_HEIGHT = 800;
     public static GCanvas canvas;
@@ -51,10 +40,6 @@ public class Game extends GraphicsProgram{
     private double tankMargin = 20;
     private static ArrayList<WorldObject> worldObjects = new ArrayList<WorldObject>(5);
     private static ArrayList<Projectile> projectiles = new ArrayList<Projectile>(5);
-
-    /*OOP: Behavior
-    run is a Behavior
-     */
 
     public void run(){
         prepareGame();
@@ -132,12 +117,7 @@ public class Game extends GraphicsProgram{
             checkCollisions(p2);
         }
     }
-    //OOP: GUI Component, GUI Event, GUI Listener
-    /*
-       *keyPressed is our GUI
-       * it lets tanks move based on the key being pressed
-       * we also use this to adjust the angle for shooting and to fire the projectile
-     */
+
     public void keyPressed(KeyEvent event){
         char key = event.getKeyChar();
         int code = event.getKeyCode();
@@ -168,7 +148,6 @@ public class Game extends GraphicsProgram{
         }
         else if(KeyEvent.VK_DOWN == code){
             currentPlayer.tank.turret.rotate(1);
-            //System.out.println("Turret Rotation: " + currentPlayer.tank.turret.getRotation());
         }
         else if(KeyEvent.VK_SPACE == code){
             currentPlayer.fire();

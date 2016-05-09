@@ -34,11 +34,4 @@ public class Turret extends WorldObject{
     public double getRotation(){
         return this.degrees;
     }
-    /*
-    public double getX(){
-        return this.originX;
-    }
-    public double getY(){
-        return this.originY;
-    }*/
 }
